@@ -43,7 +43,7 @@ const ChatWindow = ({
           <div className="h-full flex flex-col items-center justify-center text-muted-foreground">
             <MessageSquare className="w-12 h-12 mb-4 opacity-50" />
             <h3 className="text-lg font-medium mb-1">Start a conversation</h3>
-            <p className="text-sm">Ask me anything about deepfake detection!</p>
+            <p className="text-sm">Ask me anything to verify the FACT!</p>
           </div>
         ) : (
           <div className="max-w-4xl mx-auto py-4">
