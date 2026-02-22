@@ -60,7 +60,7 @@ const ChatWindow = ({
       </div>
 
       {/* Input Area (floats over messages) */}
-      <div className="fixed inset-x-0 bottom-0 z-20 bg-background/95 backdrop-blur border-t border-border">
+      <div className="absolute inset-x-0 bottom-0 z-20 bg-background/95 backdrop-blur border-t border-border">
         <ChatInput onSendMessage={onSendMessage} disabled={isLoading} />
       </div>
     </div>
