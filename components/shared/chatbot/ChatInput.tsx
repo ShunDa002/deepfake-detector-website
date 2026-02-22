@@ -45,7 +45,7 @@ const ChatInput = ({ onSendMessage, disabled = false }: ChatInputProps) => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Type your message..."
+          placeholder="Trump raises global tariff to 15pc..."
           disabled={disabled}
           className="flex-1 h-11 text-base"
         />
