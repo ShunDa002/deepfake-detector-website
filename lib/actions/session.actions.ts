@@ -96,12 +96,9 @@ export async function deleteSession(sessionId: string) {
 
     // Also delete from backend LangChain chat history
     try {
-      await fetch(
-        `https://shunda012-deepfake-fastapi.hf.space/chat/${sessionId}`,
-        {
-          method: "DELETE",
-        }
-      );
+      await fetch(`${process.env.FASTAPI_BACKEND_URL}/chat/${sessionId}`, {
+        method: "DELETE",
+      });
     } catch (backendError) {
       // Log but don't fail if backend delete fails
       console.error("Failed to delete backend chat history:", backendError);

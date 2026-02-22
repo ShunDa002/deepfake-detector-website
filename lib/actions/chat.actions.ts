@@ -14,7 +14,7 @@ interface ChatResponse {
 // Send a chat message - saves to database only if user is logged in
 export async function sendChatMessage(
   query: string,
-  sessionId: string
+  sessionId: string,
 ): Promise<{ success: boolean; data?: ChatResponse; error?: string }> {
   try {
     const session = await auth();
@@ -58,26 +58,23 @@ export async function sendChatMessage(
     // Call FastAPI backend
     // Pass save_to_db flag: true for logged-in users with DB session, false for guests
     const saveToDb = isLoggedIn && sessionExistsInDb;
-    const response = await fetch(
-      "https://shunda012-deepfake-fastapi.hf.space/chat",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query,
-          session_id: sessionId,
-          save_to_db: saveToDb,
-        }),
-      }
-    );
+    const response = await fetch(`${process.env.FASTAPI_BACKEND_URL}/chat`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query,
+        session_id: sessionId,
+        save_to_db: saveToDb,
+      }),
+    });
 
     if (!response.ok) {
       const errorBody = await response.text();
       console.error("API Error Response:", errorBody);
       throw new Error(
-        `HTTP error! status: ${response.status}, body: ${errorBody}`
+        `HTTP error! status: ${response.status}, body: ${errorBody}`,
       );
     }
 

@@ -10,8 +10,8 @@ export async function detectImage(image: File, model: ModelType = "vit") {
 
     // Choose endpoint based on selected model
     const endpointMap: Record<ModelType, string> = {
-      vit: "https://shunda012-deepfake-fastapi.hf.space/vit-detect",
-      siglip: "https://shunda012-deepfake-fastapi.hf.space/siglip-detect",
+      vit: `${process.env.FASTAPI_BACKEND_URL}/vit-detect`,
+      siglip: `${process.env.FASTAPI_BACKEND_URL}/siglip-detect`,
     };
 
     const endpoint = endpointMap[model];

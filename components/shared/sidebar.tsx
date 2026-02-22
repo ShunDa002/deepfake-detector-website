@@ -34,6 +34,11 @@ const ChatSidebar = () => {
     router.push("/image-detector");
   };
 
+  const onSessionClick = (sessionId: string) => {
+    handleSelectSession(sessionId);
+    router.push("/chat");
+  };
+
   const onDeleteClick = async (e: React.MouseEvent, sessionId: string) => {
     e.stopPropagation(); // Prevent selecting the session when clicking delete
     await handleDeleteSession(sessionId);
@@ -47,7 +52,7 @@ const ChatSidebar = () => {
           "fixed top-0 left-0 z-40 flex h-full flex-col border-r border-border bg-secondary/95 backdrop-blur-sm transition-all duration-300 ease-in-out transform",
           sidebarOpen ? "translate-x-0 w-64" : "-translate-x-full w-64",
           sidebarOpen ? "lg:w-64" : "lg:w-14",
-          "lg:translate-x-0"
+          "lg:translate-x-0",
         )}
       >
         {/* Top 2/3: navigation + history */}
@@ -73,7 +78,7 @@ const ChatSidebar = () => {
               onClick={onNewChatClick}
               className={cn(
                 "w-10 h-10 rounded-md text-sm transition-all duration-300 flex items-center hover:bg-accent hover:text-accent-foreground text-muted-foreground overflow-hidden",
-                sidebarOpen ? "w-full px-3 gap-2" : "justify-center"
+                sidebarOpen ? "w-full px-3 gap-2" : "justify-center",
               )}
               title="New Chat"
             >
@@ -81,7 +86,7 @@ const ChatSidebar = () => {
               <span
                 className={cn(
                   "whitespace-nowrap transition-opacity duration-300",
-                  sidebarOpen ? "opacity-100" : "opacity-0 w-0"
+                  sidebarOpen ? "opacity-100" : "opacity-0 w-0",
                 )}
               >
                 New Chat
@@ -93,7 +98,7 @@ const ChatSidebar = () => {
           <div
             className={cn(
               "flex-1 overflow-y-auto px-2 transition-opacity duration-300",
-              sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+              sidebarOpen ? "opacity-100" : "opacity-0 pointer-events-none",
             )}
           >
             <div className="space-y-1">
@@ -105,15 +110,15 @@ const ChatSidebar = () => {
                     "hover:bg-accent hover:text-accent-foreground",
                     activeSessionId === session.id
                       ? "bg-accent text-accent-foreground"
-                      : "text-muted-foreground"
+                      : "text-muted-foreground",
                   )}
-                  onClick={() => handleSelectSession(session.id)}
+                  onClick={() => onSessionClick(session.id)}
                 >
                   <MessageSquare className="w-4 h-4 shrink-0" />
                   <span
                     className={cn(
                       "flex-1 truncate whitespace-nowrap transition-opacity duration-300",
-                      sidebarOpen ? "opacity-100" : "opacity-0 w-0"
+                      sidebarOpen ? "opacity-100" : "opacity-0 w-0",
                     )}
                   >
                     {session.title}
@@ -140,7 +145,7 @@ const ChatSidebar = () => {
               "w-10 h-10 rounded-md text-sm transition-all duration-300 flex items-center hover:bg-accent hover:text-accent-foreground text-muted-foreground overflow-hidden",
               sidebarOpen
                 ? "w-full px-3 gap-2 justify-start"
-                : "justify-center mx-auto"
+                : "justify-center mx-auto",
             )}
             title="Image Detector"
           >
@@ -148,7 +153,7 @@ const ChatSidebar = () => {
             <span
               className={cn(
                 "whitespace-nowrap transition-opacity duration-300",
-                sidebarOpen ? "opacity-100" : "opacity-0 w-0"
+                sidebarOpen ? "opacity-100" : "opacity-0 w-0",
               )}
             >
               Image Detector

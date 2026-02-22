@@ -124,7 +124,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
     if (isLoggedIn) {
       // For logged-in users, check if there's already an empty session
       const existingEmptySession = sessions.find(
-        (s) => s.messages.length === 0
+        (s) => s.messages.length === 0,
       );
 
       if (existingEmptySession) {
@@ -244,7 +244,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
           };
         }
         return session;
-      })
+      }),
     );
 
     // Call API (which also saves to database for logged-in users)
@@ -271,7 +271,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
             };
           }
           return session;
-        })
+        }),
       );
     } catch (error) {
       const errorMessage: Message = {
@@ -291,7 +291,7 @@ export const ChatProvider = ({ children }: { children: ReactNode }) => {
             };
           }
           return session;
-        })
+        }),
       );
     } finally {
       setIsLoading(false);
