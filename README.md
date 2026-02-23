@@ -23,6 +23,8 @@ The Deepfake Detector allows users to upload images and receive an instant proba
 
 The Facts Verifier is an intelligent chatbot that classifies user queries and, when necessary, performs real-time web searches to verify claims against trusted sources. It orchestrates advanced Large Language Models (LLMs) via Groq and OpenRouter using LangChain to analyze query intent, construct optimized search queries, and synthesize factual, cited responses.
 
+![Website Demo](public/website-demo.png)
+
 ## Key Features
 
 ### 🕵️ Deepfake Image Detector
