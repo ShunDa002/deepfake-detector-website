@@ -1,4 +1,4 @@
----
+<!--
 title: Deepfake Detector & Facts Verifier
 tags:
   [
@@ -11,7 +11,7 @@ tags:
     Hugging Face,
   ]
 overview: A full-stack application designed to combat misinformation, featuring a Deepfake Image Detector powered by fine-tuned vision models and an intelligent Facts Verifier Chatbot with real-time web search capabilities.
----
+-->
 
 # Deepfake Detector & Facts Verifier
 
