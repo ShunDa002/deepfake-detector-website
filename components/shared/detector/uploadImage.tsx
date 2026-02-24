@@ -219,6 +219,9 @@ const UploadImage = () => {
           {isSubmitting ? "Processing..." : "Submit"}
         </Button>
       </div>
+      <p className="mt-2 text-center text-xs text-muted-foreground">
+        AI results may be wrong.
+      </p>
 
       {detectionResult && (
         <div className="mt-4 p-4 bg-secondary rounded-lg space-y-3">

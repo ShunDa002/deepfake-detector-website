@@ -59,6 +59,9 @@ const ChatInput = ({ onSendMessage, disabled = false }: ChatInputProps) => {
           <span className="sr-only">Send message</span>
         </Button>
       </form>
+      <p className="mt-2 text-center text-xs text-muted-foreground">
+        AI responses may be wrong. Verify important information.
+      </p>
     </div>
   );
 };

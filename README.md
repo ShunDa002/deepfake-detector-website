@@ -10,7 +10,7 @@ tags:
     LangChain,
     Hugging Face,
   ]
-overview: A full-stack application designed to combat misinformation, featuring a Deepfake Image Detector powered by fine-tuned vision models and an intelligent Facts Verifier Chatbot with real-time web search capabilities.
+description: A full-stack application designed to combat misinformation, featuring a Deepfake Image Detector powered by fine-tuned vision models and an intelligent Facts Verifier Chatbot with real-time web search capabilities.
 -->
 
 # Deepfake Detector & Facts Verifier
@@ -23,7 +23,7 @@ The Deepfake Detector allows users to upload images and receive an instant proba
 
 The Facts Verifier is an intelligent chatbot that classifies user queries and, when necessary, performs real-time web searches to verify claims against trusted sources. It orchestrates advanced Large Language Models (LLMs) via Groq and OpenRouter using LangChain to analyze query intent, construct optimized search queries, and synthesize factual, cited responses.
 
-![Website Demo](public/website-demo.png)
+![Deepfake Detector](public/website-demo.png)
 
 ## Key Features
 
@@ -72,7 +72,9 @@ Both models are implemented with LoRA (Low-Rank Adaptation) for efficient infere
 
 ### Demonstration
 
-Checkout: https://deepfake-web-nine.vercel.app
+Checkout website: https://deepfake-web-nine.vercel.app
+
+FastAPI Backend: https://huggingface.co/spaces/shunda012/deepfake-fastapi/tree/main
 
 ## License
 
